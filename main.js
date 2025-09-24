@@ -263,7 +263,7 @@ jQuery(document).on('click', '.mega-dropdown', function (e) {
   e.stopPropagation();
 });
 
-function waitForDependencies(callback, requiredPlugins = [], maxAttempts = 50) {
+function waitForDependencies(callback, requiredPlugins = [], maxAttempts = 100) {
   var attempts = 0;
 
   function check() {
@@ -293,7 +293,7 @@ function waitForDependencies(callback, requiredPlugins = [], maxAttempts = 50) {
     }
   }
 
-  check();
+  setTimeout(check, 50);
 }
 
 $(function () {
